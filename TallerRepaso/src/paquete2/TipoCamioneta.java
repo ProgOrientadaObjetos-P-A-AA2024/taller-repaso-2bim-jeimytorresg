@@ -10,7 +10,8 @@ import paquete3.Comprador;
  *
  * @author USUARIO
  */
-public class TipoCamioneta extends Tipos{
+public class TipoCamioneta extends Tipos {
+
     private double porcentajeAdicionalImportacion;
     private double valorAdicionalImportacion;
     private double seguroMantenimiento;
@@ -20,37 +21,37 @@ public class TipoCamioneta extends Tipos{
         porcentajeAdicionalImportacion = porcen;
     }
 
-    public double obtenerPorcentajeAdicionalImportacion() {
-        return porcentajeAdicionalImportacion;
-    }
-
     public void establecerPorcentajeAdicionalImportacion(double p) {
         porcentajeAdicionalImportacion = p;
+    }
+
+    public void establecerValorAdicionalImportacion() {
+        valorAdicionalImportacion = precioBase * (porcentajeAdicionalImportacion / 100);
+    }
+
+    public void establecerSeguroMantenimiento() {
+        seguroMantenimiento = valorAdicionalImportacion * 1.5;
+    }
+
+    public double obtenerPorcentajeAdicionalImportacion() {
+        return porcentajeAdicionalImportacion;
     }
 
     public double obtenerValorAdicionalImportacion() {
         return valorAdicionalImportacion;
     }
 
-    public void establecerValorAdicionalImportacion() {
-        valorAdicionalImportacion = precioBase * (porcentajeAdicionalImportacion/100);
-    }
-
     public double obtenerSeguroMantenimiento() {
         return seguroMantenimiento;
     }
 
-    public void establecerSeguroMantenimiento() {
-        seguroMantenimiento = valorAdicionalImportacion * 1.5;
-    }
-    
     @Override
-    public void establecerPrecioFinal(){
+    public void establecerPrecioFinal() {
         precioFinal = precioBase + valorAdicionalImportacion + seguroMantenimiento;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String cadena = String.format("Tipo Camioneta\n"
                 + "Nombre: %s\n"
                 + "Cedula: %s\n"
@@ -59,12 +60,12 @@ public class TipoCamioneta extends Tipos{
                 + "Valor Importacion: %.2f\n"
                 + "Seguros Mantenimiento: %.2f\n"
                 + "Precio Final: %.2f\n", propietario.obtenerNombre(),
-                propietario.obtenerCedula(), precioBase, 
+                propietario.obtenerCedula(), precioBase,
                 porcentajeAdicionalImportacion,
                 valorAdicionalImportacion,
                 seguroMantenimiento,
                 precioFinal);
         return cadena;
     }
-    
+
 }
