@@ -23,7 +23,7 @@ public class TipoSuv extends Tipos {
         return porcentajeAdicionalSeguros;
     }
 
-    public void setPorcentajeAdicionalSeguros(double p) {
+    public void establecerPorcentajeAdicionalSeguros(double p) {
         porcentajeAdicionalSeguros = p;
     }
 
@@ -31,7 +31,7 @@ public class TipoSuv extends Tipos {
         return segurosPersona;
     }
 
-    public void setSegurosPersona() {
+    public void establecerSegurosPersona() {
         segurosPersona = precioBase * (porcentajeAdicionalSeguros/100);
     }
     

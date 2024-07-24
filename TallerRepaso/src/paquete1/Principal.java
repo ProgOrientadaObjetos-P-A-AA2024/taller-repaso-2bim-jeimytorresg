@@ -18,16 +18,23 @@ public class Principal {
     public static void main(String[] args) {
         ArrayList<Tipos> lista = new ArrayList();
         Comprador prop1 = new Comprador("Daniel", "111111");
-        TipoSuv vehiculo1 = new TipoSuv(15, prop1,"Toyota", 120000);
+        TipoSuv vehiculo1 = new TipoSuv(15, prop1,"Toyota", 12000);
+        vehiculo1.establecerSegurosPersona();
         
         Comprador prop2 = new Comprador("Antonella", "1112222");
-        TipoSedan v2 = new TipoSedan(20, prop2, "Chevrolet",200000);
+        TipoSedan v2 = new TipoSedan(20, prop2, "Chevrolet",20000);
+        v2.establecerValorDescuento();
+        v2.establecerSeguroAdicionalMecanico();
         
         Comprador prop3 = new Comprador("Byron", "1112222");
-        TipoSedan v3 = new TipoSedan(25, prop3, "Hyundai",205000);
+        TipoSedan v3 = new TipoSedan(25, prop3, "Hyundai",20500);
+        v3.establecerValorDescuento();
+        v3.establecerSeguroAdicionalMecanico();
         
         Comprador prop4 = new Comprador("Eric", "1112232");
-        TipoSedan v4 = new TipoSedan(13, prop4, "Toyota",210000);
+        TipoCamioneta v4 = new TipoCamioneta(13, prop4, "Toyota",21000);
+        v4.establecerValorAdicionalImportacion();
+        v4.establecerSeguroMantenimiento();
         
         lista.add(vehiculo1);
         lista.add(v2);

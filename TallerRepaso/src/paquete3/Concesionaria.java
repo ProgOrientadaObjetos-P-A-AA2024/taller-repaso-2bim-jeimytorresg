@@ -83,11 +83,12 @@ public class Concesionaria {
     public String toString(){
         String cadena = String.format("Listado\n");
         for(int i = 0; i < listado.size();i++){
-            cadena = String.format("%s%s", cadena, listado.get(i));
+            cadena = String.format("%s%s\n", cadena, listado.get(i));
         }
         cadena = String.format("%sVehiculo Mas Caro: %.2f\n"
-                + "Vehiculo Mas Barato: %.2f\n", cadena, vehiculoMasCaro,
-                vehiculoMasBarato);
+                + "Vehiculo Mas Barato: %.2f\n"
+                + "Total de Ventas: %.2f\n", cadena, vehiculoMasCaro,
+                vehiculoMasBarato, ventasTotales);
         return cadena;
     }
 }
